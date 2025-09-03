@@ -88,7 +88,7 @@ export const openaiService = {
   },
   
   // Generate optimization recommendations for a campaign
-  async generateOptimizationRecommendations(request: AIOptimizationRequest): Promise<ApiResponse<AIOptimizationResponse>> {
+  async generateOptimizationRecommendations(_request: AIOptimizationRequest): Promise<ApiResponse<AIOptimizationResponse>> {
     try {
       // Simulate API call delay
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -134,4 +134,3 @@ export const openaiService = {
 };
 
 export default openaiService;
-

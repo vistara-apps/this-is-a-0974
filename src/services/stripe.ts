@@ -1,4 +1,4 @@
-import type { ApiResponse, SubscriptionPlan, User } from '../types';
+import type { ApiResponse, SubscriptionPlan } from '../types';
 
 // Stripe API service for subscription and payment processing
 // In a real app, most of this would be handled on the backend for security
@@ -79,7 +79,7 @@ export const stripeService = {
   },
   
   // Get user subscription
-  async getUserSubscription(userId: string): Promise<ApiResponse<{ planId: string, status: string, currentPeriodEnd: string }>> {
+  async getUserSubscription(_userId: string): Promise<ApiResponse<{ planId: string, status: string, currentPeriodEnd: string }>> {
     try {
       // In a real implementation, this would fetch subscription from Stripe API
       // For now, we'll simulate a response
@@ -101,7 +101,7 @@ export const stripeService = {
   },
   
   // Update subscription
-  async updateSubscription(subscriptionId: string, newPlanId: string): Promise<ApiResponse<{ planId: string, status: string }>> {
+  async updateSubscription(_subscriptionId: string, newPlanId: string): Promise<ApiResponse<{ planId: string, status: string }>> {
     try {
       // In a real implementation, this would update subscription in Stripe API
       // For now, we'll simulate a response
@@ -128,7 +128,7 @@ export const stripeService = {
   },
   
   // Cancel subscription
-  async cancelSubscription(subscriptionId: string): Promise<ApiResponse<{ status: string }>> {
+  async cancelSubscription(_subscriptionId: string): Promise<ApiResponse<{ status: string }>> {
     try {
       // In a real implementation, this would cancel subscription in Stripe API
       // For now, we'll simulate a response
@@ -149,4 +149,3 @@ export const stripeService = {
 };
 
 export default stripeService;
-
